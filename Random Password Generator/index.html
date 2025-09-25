@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="randomPass">
+      <header>
+        <h1>Generate a<br /><span class="green">random password</span></h1>
+        <h2>Never use an insecure password again.</h2>
+      </header>
+      <form action="">
+        <label for="password"></label>
+        <button type="button" onclick="generatePassword()">Generate passwords</button>
+      </form>
+      <div class="divider"></div>
+      <div class="passwords-container">
+        <div class="password" id="password1">Password 1</div>
+        <div class="password" id="password2">Password 2</div>
+      </div>
+      <div class="divider"></div>
+      <div class="credit">
+        <p>Created by <a href="https://www.linkedin.com/in/jhulandey/" target="_blank" rel="noopener noreferrer">JD aka codeblox!</a></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

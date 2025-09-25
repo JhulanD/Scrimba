@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Solo Project (PRO) - Basketball Scoreboard</title>
+    
+    
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="container">
+            
+            <div class="score-card">
+                <h3>HOME</h3>
+                <h2 id="home-score" class="score">18</h2>
+                <div class="score-increment">
+                    <button id="home-btn-1" class="btn" onclick="homeClick(1)">+1</button>
+                    <button id="home-btn-2" class="btn" onclick="homeClick(2)">+2</button>
+                    <button id="home-btn-3" class="btn" onclick="homeClick(3)">+3</button>
+                </div>
+            </div>
+            
+            <div class="score-card">
+                <h3>GUEST</h3>
+                <h2 id="guest-score" class="score">10</h2>
+                <div class="score-increment">
+                    <button id="guest-btn-1" class="btn" onclick="guestClick(1)">+1</button>
+                    <button id="guest-btn-2" class="btn" onclick="guestClick(2)">+2</button>
+                    <button id="guest-btn-3" class="btn" onclick="guestClick(3)">+3</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="reset">
+                <button id="reset-btn" class="btn reset-btn" onclick="resetScore()">RESET</button>
+            </div>
+
+        <script src="index.js"></script>
+    
+</body></html>
