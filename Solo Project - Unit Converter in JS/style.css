@@ -1,0 +1,247 @@
+:root {
+  --bg: #1f2937; /* dark background of card */
+  --panel: #273549; /* info card bg */
+  --accent: rgba(104, 66, 255, 1);
+  --muted: rgba(203, 193, 255, 1);
+  --light: #ffffff;
+  --glass: rgba(41, 41, 41, 0.41);
+  --page-bg: #0b0f14; /* page background */
+  --max-width: 640px;
+  --radius: 8px;
+  --gap: 16px;
+  --card-padding: 18px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background: linear-gradient(180deg, var(--page-bg) 0%, #071019 100%);
+  color: var(--light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;
+  padding: 40px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Converter card */
+.card.converter {
+  width: 100%;
+  background: var(--bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+}
+
+/* hero area */
+.hero {
+  background: linear-gradient(90deg, var(--accent), rgba(93, 71, 255, 0.7));
+  padding: 28px 20px;
+  text-align: center;
+  position: relative;
+}
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--light);
+  line-height: 1.1;
+}
+.value-display {
+  margin-top: 14px;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: var(--light);
+}
+
+/* cards grid */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  padding: 22px;
+}
+@media (min-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info-card {
+  background: var(--panel);
+  border-radius: 8px;
+  padding: var(--card-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.result {
+  margin: 0;
+  text-align: center;
+  color: var(--light);
+  font-size: 0.95rem;
+}
+.category {
+  margin: 0;
+  margin-top: 6px;
+  font-size: 1rem;
+  color: var(--muted);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* controls area */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+.btn-convert {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  background: #fff;
+  color: #3c3c3c;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.thumbnail img {
+  width: 88px;
+  height: auto;
+  display: block;
+  border: 2px solid rgba(177, 148, 255, 1);
+  border-radius: 6px;
+}
+
+/* teleport credit (fixed-like) */
+.teleport-credit {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  background: var(--glass);
+  backdrop-filter: blur(6px);
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 500;
+}
+.teleport-icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 420px) {
+  .hero {
+    padding: 18px;
+  }
+  .value-display {
+    font-size: 2rem;
+  }
+  .thumbnail img {
+    width: 64px;
+  }
+  .teleport-credit {
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+/* input visual tweaks (match dark design but visible) */
+input.value-display {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-weight: 800;
+  font-size: 2.5rem;
+  text-align: center;
+  width: 180px;
+  margin: 12px auto 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+input.value-display:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+input.value-display:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+.thumbnail img {
+  display: none !important;
+}
+
+/* optional: make input visible on focus (e.g. for screen readers) */
+input.value-display:focus-visible {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+/* optional: make input visible on hover (e.g. for screen readers) */
+input.value-display:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* optional: make input visible on active (e.g. for screen readers) */
+input.value-display:active {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+/* optional: make input visible on focus (e.g. for screen readers) */
+input.value-display:focus-visible {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+/* make  value to convert text little bigger 
+ */
+.value-display {
+  font-size: 3.5rem;
+}

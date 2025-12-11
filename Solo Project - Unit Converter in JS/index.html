@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Unit Converter — Metric / Imperial</title>
+    <meta property="og:title" content="Unit Converter — Metric / Imperial" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card converter" aria-labelledby="converter-title">
+        <header class="hero">
+          <h1 id="converter-title" class="title">
+            Metric / Imperial Unit Conversion
+          </h1>
+
+          <!-- Editable input (styled to match) -->
+          <label for="valueInput" class="sr-only">Value to convert</label>
+          <input
+            id="valueInput"
+            class="value-display"
+            type="number"
+            inputmode="decimal"
+            min="0"
+            step="any"
+            value="20"
+            aria-label="Value to convert"
+          />
+        </header>
+
+        <div class="cards" id="resultsGrid">
+          <article class="info-card" aria-labelledby="vol-title">
+            <p id="volumeResult" class="result">
+              20 liters = 5.284 gallons | 20 gallons = 75.708 liters
+            </p>
+            <h2 id="vol-title" class="category">Volume (Liters / Gallons)</h2>
+          </article>
+
+          <article class="info-card" aria-labelledby="mass-title">
+            <p id="massResult" class="result">
+              20 kilos = 44.092 pounds | 20 pounds = 9.072 kilos
+            </p>
+            <h2 id="mass-title" class="category">Mass (Kilograms / Pounds)</h2>
+          </article>
+
+          <article class="info-card" aria-labelledby="length-title">
+            <p id="lengthResult" class="result">
+              20 meters = 65.616 feet | 20 feet = 6.096 meters
+            </p>
+            <h2 id="length-title" class="category">Length (Meters / Feet)</h2>
+          </article>
+        </div>
+
+        <div class="controls">
+          <button
+            id="convertBtn"
+            type="button"
+            class="btn-convert"
+            aria-controls="resultsGrid"
+          >
+            Convert
+          </button>
+          <div class="thumbnail" aria-hidden="true">
+            <img src="public/rectangle1441105-f1o-200h.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <a
+        class="teleport-credit"
+        href="https://play.teleporthq.io/signup"
+        aria-label="Sign up to TeleportHQ"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 19 21"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="teleport-icon"
+          aria-hidden="true"
+        >
+          <path
+            d="M9.1017 4.64355H2.17867C0.711684 4.64355 -0.477539 5.79975 -0.477539 7.22599V13.9567C-0.477539 15.3829 0.711684 16.5391 2.17867 16.5391H9.1017C10.5687 16.5391 11.7579 15.3829 11.7579 13.9567V7.22599C11.7579 5.79975 10.5687 4.64355 9.1017 4.64355Z"
+            fill="#B23ADE"
+          ></path>
+          <path
+            d="M10.9733 12.7878C14.4208 12.7878 17.2156 10.0706 17.2156 6.71886C17.2156 3.3671 14.4208 0.649963 10.9733 0.649963C7.52573 0.649963 4.73096 3.3671 4.73096 6.71886C4.73096 10.0706 7.52573 12.7878 10.9733 12.7878Z"
+            fill="#FF5C5C"
+          ></path>
+          <path
+            d="M17.7373 13.3654C19.1497 14.1588 19.1497 15.4634 17.7373 16.2493L10.0865 20.5387C8.67402 21.332 7.51855 20.6836 7.51855 19.0968V10.5141C7.51855 8.92916 8.67402 8.2807 10.0865 9.07221L17.7373 13.3654Z"
+            fill="#2874DE"
+          ></path>
+        </svg>
+        <span>Built in TeleportHQ</span>
+      </a>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
